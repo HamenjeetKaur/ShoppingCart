@@ -1,0 +1,50 @@
+body,ul,li,div,p,span,h1,h2,h3,h4,h5,h6,i,a{
+margin: 0;padding:0;
+} 
+.main{
+    margin: 0 auto;
+    width: 1000px;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+
+.mydiv{
+    width:100px;
+    height:100px;
+    background-color: yellow;
+}
+
+.hero-txt h2{
+  margin-top: 100px;
+  padding: 20px; 
+}
+
+.hero-img{
+    margin-top: 100px;
+    padding: 20px; 
+    width:auto;
+    height: 300px;
+    width:500px
+}
+
+.item{
+    Padding: 50px;
+}
+
+.item-img{
+    height:300px;
+    border:1px solid black;
+}
+
+.footer{
+    background-color:aqua;
+}
+
+.cart-img{
+   width: 50px;
+   height:50px; 
+}
