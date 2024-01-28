@@ -1,19 +1,22 @@
-<?php 
- session_start();
- 
+<?php
+session_start();
 ?>
-    
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <link href="style/style.css" rel="stylesheet" >
-  </head>
-  <body>
-  <div class="col-md-12">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="#">Farm Shop</a>
@@ -50,68 +53,34 @@
     </div>
 
     
-    <table class="table">
-      <thead>
+    <div class="container mt-4">
+        <h1>Contact Us</h1>
+        <p>Our grocery store is located in various cities:</p>
+        <ul>
+            <li>Mississauga</li>
+            <li>Scarborough</li>
+            <li>Brampton</li>
+            <li>Caledon</li>
+            <li>Burlington</li>
+            <li>Oakville</li>
+            <li>Kingston</li>
+        </ul>
+        <p>For online grocery, visit our website <a href="http://farmgrocery.ca" target="_blank">farmgrocery.ca</a>.</p>
+        <p>You can contact us at: +1(437)-566-456 or farmgrocery1212@gmail.com</p>
+    </div>
 
-        <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Product</th>
-          <th scope="col">Price</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-<?php
-    if(isset($_SESSION['p_name'])){
-
-    $filtered_array=array_unique($_SESSION['p_name']);
-    $sub_total=0;
-
-    foreach($filtered_array as $row){
-   
-    $item_repeated=array_count_values($_SESSION['p_name']);
-    $find_position_in_array=array_search($row,$_SESSION['p_name']);
-   
-    $quan=$item_repeated[$row];
-    $price=$_SESSION['price'][$find_position_in_array];
-    $total=$quan * $price;
-    $sub_total += $total;
-    ?>
-<tr>
-          <td><img src="<?php echo $_SESSION['image'][$find_position_in_array]?>" alt=""></td>
-          <td><?php echo $row ?></td>
-          <td><?php echo $_SESSION['price'][$find_position_in_array]?> CAD</td>
-          <td><?php echo $item_repeated[$row] ?></td>
-          <td><?php echo $total ?> CAD</td>
-</tr>
-
-
-    <?php 
-    }
-    }
-?>
-
-<tr>
-    <td colspan="4" class="text-end"><strong>Grand Total:</strong></td>
-    <td><strong><?php if(isset($_SESSION['p_name'])){ echo $sub_total; } else {echo "0";}?> CAD </strong></td>;
-</tr>
-
-        
-        
-
-</tbody>
-    </table>
-
-    <div class="footer">
+    
+    <div class="footer mt-4">
         <div class="row">
-          <div class="text-center">
-            <p>Developed by Hamenjeet Kaur &copy; 2024</p>
-          </div>
+            <div class="text-center">
+                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+            </div>
         </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js" ></script>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
 
-  </body>
-</html>    
+</body>
+
+</html>

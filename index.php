@@ -35,6 +35,7 @@ session_destroy();
     <link href="style/style.css" rel="stylesheet" >
   </head>
   <body>
+
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -45,16 +46,13 @@ session_destroy();
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Shop</a>
+                <a class="nav-link active" aria-current="page" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -65,6 +63,9 @@ session_destroy();
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="cart.php">Cart <span class="badge bg-secondary"><?php  if(isset($_SESSION['p_counter'])){  echo $_SESSION['p_counter']; }else{ echo "0"; } ?></span></a>
               </li>
+              <form action="" method="POST">
+               <button type="submit" name="del" class="btn-info">Clear Cart</button>
+              </form>
             </ul>
           </div>
         </div>
@@ -77,10 +78,6 @@ session_destroy();
       <div class="col-md-6 text-center hero-txt">
       <h2>Welcome to Farm Shop</h2>
       <h4>A place to get all your needs.</h4>
-      <form action="" method="POST">
-         <button type="submit" name="del" class="btn-info">Clear Cart</button>
-      
-      </form>
       </div>
       <div class="hero-img col-md-6">
         <img src="img/1.jpg" class="img-fluid" alt="">
@@ -97,7 +94,7 @@ session_destroy();
           <input type="hidden" name="image" value="img/p1.jpg">
          <img src="img/p1.jpg" class="item-img img-fluid" alt="">
           <input type="hidden" name="p_name" value="Table Salt">
-          <input type="hidden" name="price" value="CAD $4.50">
+          <input type="hidden" name="price" value="4.50">
           <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
@@ -107,17 +104,17 @@ session_destroy();
           <input type="hidden" name="image" value="img/p2.jpg">
           <img src="img/p2.jpg" class="item-img img-fluid" alt="">
           <input type="hidden" name="p_name" value="Granuled Cane Sugar">
-          <input type="hidden" name="price" value="CAD $5.99">
+          <input type="hidden" name="price" value="5.99">
           <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
 
 
         <div class="item col-md-4">
           <form action ="" method="POST">
-          <input type="hidden" name="image" value="img/p2.jpg">
-          <img src="img/p2.jpg" class="item-img img-fluid" alt="">
+          <input type="hidden" name="image" value="img/p3.jpg">
+          <img src="img/p3.jpg" class="item-img img-fluid" alt="">
           <input type="hidden" name="p_name" value="Large Size Eggs">
-          <input type="hidden" name="price" value="CAD $4.78">
+          <input type="hidden" name="price" value="4.78">
           <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
