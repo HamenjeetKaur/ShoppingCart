@@ -37,7 +37,7 @@ session_destroy();
   <body>
 
     <div class="col-md-12">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
           <a class="navbar-brand" href="#">Farm Shop</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +80,7 @@ session_destroy();
       <h4>A place to get all your needs.</h4>
       </div>
       <div class="hero-img col-md-6">
-        <img src="img/1.jpg" class="img-fluid" alt="">
+        <img src="img/grocery.jpg" class="img-fluid" alt="">
       </div>
       </div>
 
@@ -91,31 +91,32 @@ session_destroy();
 
         <div class="item col-md-4">
           <form action ="" method="POST">
-          <input type="hidden" name="image" value="img/p1.jpg">
-         <img src="img/p1.jpg" class="item-img img-fluid" alt="">
-          <input type="hidden" name="p_name" value="Table Salt">
-          <input type="hidden" name="price" value="4.50">
-          <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+             <input type="hidden" name="image" value="img/salt.jpg">
+             <img src="img/salt.jpg" class="item-img img-fluid" alt="">
+             <input type="hidden" name="p_name" value="Table Salt">
+             <input type="hidden" name="price" value="4.50">
+             <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
 
         <div class="item col-md-4">
-          <form action="" method="POST">
-          <input type="hidden" name="image" value="img/p2.jpg">
-          <img src="img/p2.jpg" class="item-img img-fluid" alt="">
-          <input type="hidden" name="p_name" value="Granuled Cane Sugar">
-          <input type="hidden" name="price" value="5.99">
-          <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+          <form action ="" method="POST">
+              <input type="hidden" name="image" value="img/sugar.jpg">
+              <img src="img/sugar.jpg" class="item-img img-fluid" alt="">
+              <input type="hidden" name="p_name" value="Granuled Cane Sugar">
+              <input type="hidden" name="price" value="5.99">
+              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
+        </div>
 
 
         <div class="item col-md-4">
           <form action ="" method="POST">
-          <input type="hidden" name="image" value="img/p3.jpg">
-          <img src="img/p3.jpg" class="item-img img-fluid" alt="">
-          <input type="hidden" name="p_name" value="Large Size Eggs">
-          <input type="hidden" name="price" value="4.78">
-          <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+              <input type="hidden" name="image" value="img/eggs.jpg">
+              <img src="img/eggs.jpg" class="item-img img-fluid" alt="">
+              <input type="hidden" name="p_name" value="Large Size Eggs">
+              <input type="hidden" name="price" value="4.78">
+              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
       </div>
@@ -123,14 +124,14 @@ session_destroy();
     </div>
     </div>
 
-    <div class="footer">
+    <div class="footer mt-4">
         <div class="row">
-          <div class="text-center">
-            <p>Developed by Hamenjeet Kaur &copy; 2024</p>
-          </div>
+            <div class="text-center">
+                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+            </div>
         </div>
     </div>
-
+    
     <script src="js/bootstrap.bundle.min.js" ></script>
 
   </body>

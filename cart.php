@@ -2,6 +2,11 @@
  session_start();
  
 ?>
+<?php
+if(isset($_POST['del'])){
+session_destroy();
+}
+?>
     
 <!doctype html>
 <html lang="en">
@@ -14,7 +19,7 @@
   </head>
   <body>
   <div class="col-md-12">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">Farm Shop</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +59,7 @@
       <thead>
 
         <tr>
+         <th scope="col">Item No.</th>
           <th scope="col">Image</th>
           <th scope="col">Product</th>
           <th scope="col">Price</th>
@@ -67,7 +73,7 @@
 
     $filtered_array=array_unique($_SESSION['p_name']);
     $sub_total=0;
-
+    $number=1;
     foreach($filtered_array as $row){
    
     $item_repeated=array_count_values($_SESSION['p_name']);
@@ -77,24 +83,26 @@
     $price=$_SESSION['price'][$find_position_in_array];
     $total=$quan * $price;
     $sub_total += $total;
+
     ?>
 <tr>
-          <td><img src="<?php echo $_SESSION['image'][$find_position_in_array]?>" alt=""></td>
+          <td><?php echo $number; ?></td>
+          <td><img class= "c-img" src="<?php echo $_SESSION['image'][$find_position_in_array]?>" alt=""></td>
           <td><?php echo $row ?></td>
           <td><?php echo $_SESSION['price'][$find_position_in_array]?> CAD</td>
           <td><?php echo $item_repeated[$row] ?></td>
           <td><?php echo $total ?> CAD</td>
 </tr>
 
-
     <?php 
+    $number++;
     }
     }
 ?>
 
 <tr>
     <td colspan="4" class="text-end"><strong>Grand Total:</strong></td>
-    <td><strong><?php if(isset($_SESSION['p_name'])){ echo $sub_total; } else {echo "0";}?> CAD </strong></td>;
+    <td><strong><?php if(isset($_SESSION['p_name'])){ echo $sub_total; } else {echo "0";}?> CAD </strong></td>
 </tr>
 
         
@@ -103,11 +111,11 @@
 </tbody>
     </table>
 
-    <div class="footer">
+    <div class="footer mt-4">
         <div class="row">
-          <div class="text-center">
-            <p>Developed by Hamenjeet Kaur &copy; 2024</p>
-          </div>
+            <div class="text-center">
+                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+            </div>
         </div>
     </div>
 

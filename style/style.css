@@ -5,7 +5,7 @@ body, h1, h2, h3, p {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    background-color: #ffffff9c;
     color: #333333;
 }
 
@@ -33,12 +33,13 @@ body {
 }
 
 .hero-area {
-    background-color: #c0a9bd;
+    background-color: #ffffffbc;
     padding: 50px 0;
 }
 
 .hero-txt {
     color: #333333;
+    padding: 100px;
 }
 
 .product-area {
@@ -46,13 +47,15 @@ body {
 }
 
 .item {
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
 .item-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border-radius: 50 px;
+    height:300px;
+    width:320px;
+    border:2px solid #333333
 }
 
 .footer {
@@ -65,26 +68,23 @@ body {
 }
 
 .btn-info {
-    background-color: #333333;
-    color: #ffffff;
-    border: none;
+    background-color: #c0a9bd;
+    color: #000000 ;
+    border: 2px solid #333333 ;
+    margin-top:7px ;
 }
 
 .btn-info:hover {
     background-color: #555555;
-    color: #ffffff;
+    color: #ffffbc;
 }
 
 .table {
     margin-top: 30px;
 }
 
-@media (max-width: 767px) {
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
+.c-img{
+    width: 100px;
+    height:100px; 
+ }
 
-    .navbar-nav .nav-link {
-        font-size: 0.9rem;
-    }
-}
