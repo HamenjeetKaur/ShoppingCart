@@ -55,9 +55,9 @@ session_destroy();
                 <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex" method="POST" action="search.php">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>  
+              <button class="btn btn-outline-success" type="submit" name="srch">Search</button>  
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
