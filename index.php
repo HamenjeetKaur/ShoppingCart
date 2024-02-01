@@ -35,7 +35,7 @@ session_destroy();
     <link href="style/style.css" rel="stylesheet" >
   </head>
   <body>
-
+  <a id="cart-section"></a>
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
@@ -95,6 +95,8 @@ session_destroy();
              <img src="img/salt.jpg" class="item-img img-fluid" alt="">
              <input type="hidden" name="p_name" value="Table Salt">
              <input type="hidden" name="price" value="4.50">
+             <h5>Table Salt</h5>
+             <h5> CAD 4.50</h5>
              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
@@ -105,6 +107,8 @@ session_destroy();
               <img src="img/sugar.jpg" class="item-img img-fluid" alt="">
               <input type="hidden" name="p_name" value="Granuled Cane Sugar">
               <input type="hidden" name="price" value="5.99">
+              <h5>Granuled Cane Sugar</h5>
+             <h5> CAD 5.99</h5>
               <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>
@@ -116,6 +120,47 @@ session_destroy();
               <img src="img/eggs.jpg" class="item-img img-fluid" alt="">
               <input type="hidden" name="p_name" value="Large Size Eggs">
               <input type="hidden" name="price" value="4.78">
+              <h5>Large Size Eggs</h5>
+             <h5> CAD 4.78</h5>
+              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+          </form>
+        </div>
+
+
+        <div class="item col-md-4">
+          <form action ="" method="POST">
+              <input type="hidden" name="image" value="img/apple.jpg">
+              <img src="img/apple.jpg" class="item-img img-fluid" alt="">
+              <input type="hidden" name="p_name" value="Apple (1 lb)">
+              <input type="hidden" name="price" value="5.54">
+              <h5>Apple (1 lb)</h5>
+             <h5> CAD 5.54</h5>
+              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+          </form>
+        </div>
+
+
+        <div class="item col-md-4">
+          <form action ="" method="POST">
+              <input type="hidden" name="image" value="img/orange.jpg">
+              <img src="img/orange.jpg" class="item-img img-fluid" alt="">
+              <input type="hidden" name="p_name" value="Orange (1 lb)">
+              <input type="hidden" name="price" value="4.99">
+              <h5>Orange (1 lb)</h5>
+             <h5> CAD 4.99</h5>
+              <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
+          </form>
+        </div>
+
+
+        <div class="item col-md-4">
+          <form action ="" method="POST">
+              <input type="hidden" name="image" value="img/oats.jpg">
+              <img src="img/oats.jpg" class="item-img img-fluid" alt="">
+              <input type="hidden" name="p_name" value="Oats">
+              <input type="hidden" name="price" value="4.50">
+              <h5>Oats</h5>
+             <h5> CAD 4.50</h5>
               <BUTTON TYPE="Submit" class="btn-info" name="submit">Add to Cart</button>
           </form>
         </div>

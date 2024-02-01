@@ -1,7 +1,36 @@
 <?php 
  session_start();
- 
+
+if (isset($_POST['add'])){
+  if(isset($_SESSION['p_counter'])){
+    $_SESSION['p_counter']=$_SESSION['p_counter']+1;
+}else{
+    $_SESSION['p_counter']=1;
+    $_SESSION['p_name']=array();
+        $_SESSION['price']=array();
+        $_SESSION['image']=array();
+    }
+
+    $_SESSION['p_name'][$_SESSION['p_counter']]=$_POST['p_name'];
+    $_SESSION['price'][$_SESSION['p_counter']]=$_POST['price'];
+    $_SESSION['image'][$_SESSION['p_counter']]=$_POST['image'];
+  }
+
+  if (isset($_POST['rem'])){
+      $_SESSION['p_counter']=$_SESSION['p_counter']-1;
+
+      unset($_SESSION['p_name'][$_POST['pos_p']]);
+      unset($_SESSION['price'][$_POST['pos_p']]);
+      unset($_SESSION['image'][$_POST['pos_p']]);
+  
+      $_SESSION['p_name']=$_SESSION['p_name'];
+      $_SESSION['price']=$_SESSION['price'];
+      $_SESSION['image']=$_SESSION['image'];
+   }
+
+
 ?>
+
 <?php
 if(isset($_POST['del'])){
 session_destroy();
@@ -90,7 +119,16 @@ session_destroy();
           <td><img class= "c-img" src="<?php echo $_SESSION['image'][$find_position_in_array]?>" alt=""></td>
           <td><?php echo $row ?></td>
           <td><?php echo $_SESSION['price'][$find_position_in_array]?> CAD</td>
-          <td><?php echo $item_repeated[$row] ?></td>
+          <form action="" method="POST">
+            <input type="hidden" name="pos_p" value="<?=$find_position_in_array?>">
+            <input type="hidden" name="p_name" value="<?=$row?>">
+            <input type="hidden" name="price" value="<?=$_SESSION['price'][$find_position_in_array]?>">
+            <input type="hidden" name="image" value="<?=$_SESSION['image'][$find_position_in_array]?>">
+          <td>  <button type="submit" name="rem" class="btn-info"> - </button>
+          <?php echo $item_repeated[$row] ?>
+          <button type="submit" name="add" class="btn-info"> + </button>
+          </td>
+          </form>
           <td><?php echo $total ?> CAD</td>
 </tr>
 
