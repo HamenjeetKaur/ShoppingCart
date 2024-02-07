@@ -14,8 +14,8 @@ session_start();
   </head>
   <body>
   <a id="cart-section"></a>
-    <div class="col-md-12">
-      <nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">Farm Shop</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,59 +26,104 @@ session_start();
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about.php">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>  
+            </form>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="cart.php">Cart <span class="badge bg-secondary"><?php  if(isset($_SESSION['p_counter'])){  echo $_SESSION['p_counter']; }else{ echo "0"; } ?></span></a>
+              </li>
+              <form action="" method="POST">
+               <button type="submit" name="del" class="btn-info">Clear Cart</button>
+              </form>
             </ul>
           </div>
         </div>
       </nav>
     </div>
 
+
 <h4>Results:</h4>
 
-<table id="users">
+<table id="items">
+  <thead>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th>Price</th>
+    <th>Add to list</th>
   </tr>
+</thead>
 
-  
+ <tbody> 
 <?php
-if(isset($_POST['srch'])){
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shoping_cart";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["product_name"])) {
+    echo "***Please Mention Product Name.***";
+  } else{
+    if (isset($_POST['srch'])){
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-    $sql= "SELECT `name`, `price` FROM `products` WHERE 1";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-  
-  
-        while($row = $result->fetch_assoc()) {
-          echo "<tr>";
-          echo "<td>".$row["name"]."</td>";
-          echo "<td>".$row["price"]."</td>";
-          echo "</tr>";
-        }
-      } else {
-        echo "<tr><td colspan='2'>0 results</td></tr>";
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "shoping_cart";
+      
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
       }
-      $conn->close();
-}
+      
+          $sql= "SELECT `name`, `price` FROM `products` WHERE `name`LIKE '%".$_POST['product_name']."%' ";
+      
+          $result = $conn->query($sql);
+      
+          if ($result->num_rows > 0) {
+        
+        
+              while($row = $result->fetch_assoc()) {
 
-?>
+    ?>
+                <tr>
+                <td><img class= "c-img" src="<?php echo $_SESSION['image'][$find_position_in_array]?>" alt=""></td>
+                <td><?php echo $row["name"]; ?></td>
+                <td><?php echo $row["price"]; ?></td>
+                <form action="" method="POST">
+                <input type="hidden" name="pos_p" value="<?=$find_position_in_array?>">
+                <input type="hidden" name="p_name" value="<?=$row?>">
+                <input type="hidden" name="price" value="<?=$_SESSION['price'][$find_position_in_array]?>">
+                <input type="hidden" name="image" value="<?=$_SESSION['image'][$find_position_in_array]?>">
+                <td><button type="submit" name="addtocart" class="btn-info"> Add to Cart </button></td>
+                </form>
+                </tr>
+     <?php
+      }
+    } else {
+      echo "<tr><td colspan='4'>0 results</td></tr>";
+    }
+    $conn->close();
+    }
+  }
+
+}
+    ?>     
+             
+  
+</tbody>
 </table>
 <div class="footer mt-4">
         <div class="row">
             <div class="text-center">
-                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+                <p>Developed by Hamenjeet Kaur &copy; 2024</p>
             </div>
         </div>
     </div>

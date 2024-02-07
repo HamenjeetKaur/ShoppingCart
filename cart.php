@@ -152,7 +152,7 @@ session_destroy();
     <div class="footer mt-4">
         <div class="row">
             <div class="text-center">
-                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+                <p>Developed by Hamenjeet Kaur &copy; 2024</p>
             </div>
         </div>
     </div>

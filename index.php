@@ -35,7 +35,6 @@ session_destroy();
     <link href="style/style.css" rel="stylesheet" >
   </head>
   <body>
-  <a id="cart-section"></a>
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
@@ -56,7 +55,7 @@ session_destroy();
               </li>
             </ul>
             <form class="d-flex" method="POST" action="search.php">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" name="product_name" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit" name="srch">Search</button>  
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
@@ -172,7 +171,7 @@ session_destroy();
     <div class="footer mt-4">
         <div class="row">
             <div class="text-center">
-                <p>Developed by Hamenjeet Kaur and Mehak Rajrana &copy; 2024</p>
+                <p>Developed by Hamenjeet Kaur &copy; 2024</p>
             </div>
         </div>
     </div>
